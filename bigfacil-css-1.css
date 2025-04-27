@@ -1,0 +1,468 @@
+/* Reset and Base Styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: #3498db; /* Blue */
+    --secondary-color: #2c3e50; /* Dark Blue/Grey */
+    --accent-color: #e74c3c; /* Red */
+    --light-color: #ecf0f1; /* Light Grey */
+    --dark-color: #333;
+    --text-color: #333;
+    --bg-color: #fff;
+    --header-height: 70px;
+    --sidebar-width: 200px;
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color); /* Fallback background */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    position: relative; /* Needed for absolute positioning of children */
+    min-height: 100vh;
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Video Background */
+#bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    background: url('placeholder.jpg') no-repeat; /* Placeholder image */
+    background-size: cover;
+    object-fit: cover; /* Cover the area without distortion */
+}
+
+/* Content Overlay - Ensures content is readable over video */
+.content-overlay {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white overlay */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Header & Navigation */
+header {
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    position: sticky; /* Make header sticky */
+    top: 0;
+    z-index: 10;
+    width: 100%;
+}
+
+header nav .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: var(--header-height);
+}
+
+#logo-container h1 {
+    margin: 0;
+    font-size: 1.8em;
+    color: var(--light-color); /* Ensure logo text is visible */
+}
+
+#main-menu {
+    display: flex;
+}
+
+#main-menu li {
+    position: relative; /* For submenu positioning */
+    margin-left: 20px;
+}
+
+#main-menu a {
+    color: var(--light-color);
+    padding: 10px;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+#main-menu a:hover,
+#main-menu li:hover > a {
+    background-color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* Submenu */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--secondary-color);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.submenu li {
+    margin-left: 0; /* Reset margin for submenu items */
+}
+
+.submenu a {
+    padding: 12px 16px;
+    white-space: nowrap; /* Prevent line breaks */
+}
+
+#main-menu li:hover .submenu {
+    display: block;
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none; /* Hidden by default */
+    background: none;
+    border: none;
+    color: var(--light-color);
+    font-size: 2em;
+    cursor: pointer;
+}
+
+
+/* Marquee */
+.marquee-container {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    padding: 5px 0;
+    width: 100%;
+}
+
+marquee {
+    font-weight: bold;
+}
+
+/* Sidebar */
+#sidebar {
+    position: fixed;
+    top: var(--header-height); /* Position below header */
+    right: 0;
+    width: var(--sidebar-width);
+    height: calc(100vh - var(--header-height)); /* Full height minus header */
+    background-color: rgba(44, 62, 80, 0.9); /* Darker semi-transparent */
+    color: var(--light-color);
+    padding: 20px;
+    overflow-y: auto;
+    z-index: 5;
+    transition: right 0.3s ease;
+}
+
+#sidebar h2 {
+    margin-top: 0;
+    border-bottom: 1px solid var(--light-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+#sidebar button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#sidebar button:hover {
+    background-color: #2980b9; /* Darker blue */
+}
+
+
+/* Main Content Area */
+main {
+    padding: 30px;
+    /* Adjust padding-right to avoid overlap with the fixed sidebar */
+    padding-right: calc(var(--sidebar-width) + 30px);
+    flex-grow: 1; /* Make main content take available space */
+    max-width: 1200px; /* Limit content width */
+    margin: 0 auto; /* Center content */
+    width: 100%; /* Ensure it takes width before centering */
+}
+
+
+/* Post Previews */
+.post-preview {
+    display: flex;
+    background-color: var(--bg-color);
+    margin-bottom: 25px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden; /* Ensure content doesn't overflow */
+}
+
+.post-image-placeholder {
+    width: 150px; /* Fixed width for the image placeholder */
+    height: 100px; /* Fixed height */
+    background-color: #eee; /* Placeholder color */
+    flex-shrink: 0; /* Prevent image from shrinking */
+    background-image: url('https://via.placeholder.com/150x100?text=Imagem'); /* Placeholder image service */
+    background-size: cover;
+    background-position: center;
+}
+
+.post-content {
+    padding: 15px;
+    flex-grow: 1; /* Allow text content to take remaining space */
+}
+
+.post-content h2 {
+    margin-top: 0;
+    font-size: 1.4em;
+    color: var(--secondary-color);
+}
+
+.post-content p {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.read-more {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border-radius: 3px;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.read-more:hover {
+    background-color: #2980b9; /* Darker blue */
+    text-decoration: none;
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    padding: 30px 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Allow sections to wrap on smaller screens */
+    gap: 20px; /* Add space between footer sections */
+    border-top: 5px solid var(--primary-color);
+}
+
+.footer-section {
+    flex: 1; /* Allow sections to grow */
+    min-width: 200px; /* Minimum width before wrapping */
+    padding: 0 15px;
+    border-right: 1px solid var(--light-color); /* Vertical line */
+}
+
+.footer-section:last-child {
+    border-right: none; /* Remove border from the last section */
+}
+
+.footer-section h3 {
+    color: var(--light-color);
+    border-bottom: 1px solid var(--primary-color);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+.footer-section ul {
+    padding-left: 0;
+}
+.footer-section li {
+    margin-bottom: 5px;
+}
+.footer-section a {
+    color: var(--light-color);
+}
+.footer-section a:hover {
+    color: var(--primary-color);
+}
+
+
+/* --- Responsiveness --- */
+
+/* Medium screens (tablets) */
+@media (max-width: 992px) {
+    :root {
+        --sidebar-width: 180px;
+    }
+    main {
+         padding-right: calc(var(--sidebar-width) + 20px);
+         padding-left: 20px;
+    }
+    .nav-container {
+        padding: 0 15px;
+    }
+}
+
+
+/* Small screens (landscape phones, small tablets) */
+@media (max-width: 768px) {
+    :root {
+        --header-height: 60px;
+    }
+
+    #logo-container h1 {
+        font-size: 1.5em;
+    }
+
+    .menu-toggle {
+        display: block; /* Show hamburger icon */
+    }
+
+    #main-menu {
+        display: none; /* Hide menu by default */
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        background-color: var(--secondary-color);
+        width: 100%;
+        flex-direction: column;
+        padding-bottom: 10px; /* Spacing for menu items */
+    }
+
+    #main-menu.active {
+        display: flex; /* Show menu when active */
+    }
+
+
+    #main-menu li {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    #main-menu a {
+       padding: 12px 20px;
+       border-bottom: 1px solid rgba(236, 240, 241, 0.2); /* Subtle separator */
+    }
+     #main-menu li:last-child a {
+        border-bottom: none;
+     }
+
+    .submenu {
+        position: static; /* Stack submenu under parent */
+        display: block; /* Always show submenu items */
+        background-color: transparent; /* Inherit background */
+        box-shadow: none;
+        padding-left: 20px; /* Indent submenu */
+    }
+     .submenu a {
+        padding: 10px 20px;
+        font-size: 0.9em;
+        color: #bdc3c7; /* Lighter color for submenu */
+     }
+     #main-menu li:hover .submenu {
+        /* No special display needed */
+     }
+      #main-menu li:hover > a {
+         /* No special background on hover for parent when submenu is shown */
+         background-color: transparent;
+     }
+      #main-menu a:hover {
+         background-color: var(--primary-color); /* Keep hover effect on individual items */
+     }
+
+
+    /* Adjust main content and sidebar for smaller screens */
+    #sidebar {
+        width: 150px; /* Reduce sidebar width */
+        top: calc(var(--header-height) + 36px); /* Account for header AND marquee */
+        height: calc(100vh - var(--header-height) - 36px);
+    }
+
+    main {
+        padding: 20px; /* Reset padding */
+        padding-right: calc(150px + 20px); /* Keep space for sidebar */
+    }
+
+    .post-preview {
+        flex-direction: column; /* Stack image and content vertically */
+    }
+
+    .post-image-placeholder {
+        width: 100%; /* Full width image */
+        height: 150px; /* Adjust height */
+    }
+
+    .footer-section {
+        flex-basis: 100%; /* Each section takes full width */
+        margin-bottom: 20px;
+        border-right: none; /* Remove vertical lines */
+        padding: 0;
+    }
+     .footer-section:last-child {
+        margin-bottom: 0;
+     }
+}
+
+/* Extra small screens (portrait phones) */
+@media (max-width: 576px) {
+
+     /* Hide sidebar completely and adjust main content */
+    #sidebar {
+       /* Option 1: Hide completely */
+       /* display: none; */
+
+       /* Option 2: Make it toggleable or much smaller */
+        right: -150px; /* Hide off-screen */
+        /* Add a button elsewhere to toggle sidebar visibility if needed */
+         transition: right 0.3s ease; /* Add transition */
+    }
+    #sidebar.active { /* Example class to show sidebar */
+        right: 0;
+    }
+
+    main {
+        padding: 15px; /* Full width padding */
+    }
+
+    .post-image-placeholder {
+        height: 120px; /* Further adjust image height */
+    }
+     .post-content h2 {
+        font-size: 1.2em;
+     }
+     .footer-section h3 {
+         font-size: 1.1em;
+     }
+}

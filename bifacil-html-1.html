@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BigLinux - Site e Aplicativo Web</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+      {
+        "imports": {
+          // Add JS library imports here if needed later
+        }
+      }
+    </script>
+</head>
+<body>
+
+    <video autoplay muted loop id="bg-video">
+        <!-- Add your video source here -->
+        <!-- <source src="your-video.mp4" type="video/mp4"> -->
+        Seu navegador não suporta a tag de vídeo.
+    </video>
+
+    <div class="content-overlay"> <!-- Layer above video for content -->
+
+        <header>
+            <nav>
+                <div class="nav-container">
+                    <div id="logo-container">
+                        <!-- Add your logo here -->
+                        <h1>BigLinux</h1>
+                    </div>
+                    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+                    <ul id="main-menu">
+                        <li><a href="#">Home</a></li>
+                        <li>
+                            <a href="#">Produtos</a>
+                            <ul class="submenu">
+                                <li><a href="#">Produto A</a></li>
+                                <li><a href="#">Produto B</a></li>
+                                <li><a href="#">Produto C</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="marquee-container">
+                <marquee>Teste,testando...</marquee>
+            </div>
+        </header>
+
+        <aside id="sidebar">
+            <h2>Controles</h2>
+            <button id="play-pause-btn">Play/Pause</button>
+            <button id="mute-btn">Mute/Unmute</button>
+            <!-- Add more controls as needed -->
+        </aside>
+
+        <main>
+            <article class="post-preview">
+                <div class="post-image-placeholder"></div>
+                <div class="post-content">
+                    <h2>Título do Post 1</h2>
+                    <p>Um breve resumo do conteúdo deste post interessante...</p>
+                    <a href="#" class="read-more">Leia mais...</a>
+                </div>
+            </article>
+
+            <article class="post-preview">
+                <div class="post-image-placeholder"></div>
+                <div class="post-content">
+                    <h2>Título do Post 2</h2>
+                    <p>Outro resumo, desta vez sobre um tópico diferente mas igualmente cativante...</p>
+                    <a href="#" class="read-more">Leia mais...</a>
+                </div>
+            </article>
+
+             <article class="post-preview">
+                <div class="post-image-placeholder"></div>
+                <div class="post-content">
+                    <h2>Título do Post 3</h2>
+                    <p>Mais um exemplo de como os posts aparecerão aqui no blog...</p>
+                    <a href="#" class="read-more">Leia mais...</a>
+                </div>
+            </article>
+             <article class="post-preview">
+                <div class="post-image-placeholder"></div>
+                <div class="post-content">
+                    <h2>Título do Post 4</h2>
+                    <p>Descrição curta para a pré-visualização do quarto post do blog...</p>
+                    <a href="#" class="read-more">Leia mais...</a>
+                </div>
+            </article>
+
+        </main>
+
+        <footer>
+            <div class="footer-section">
+                <h3>Seção 1</h3>
+                <p>Informações úteis aqui.</p>
+                <ul>
+                    <li><a href="#">Link 1</a></li>
+                    <li><a href="#">Link 2</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Seção 2</h3>
+                <p>Mais conteúdo no rodapé.</p>
+                 <ul>
+                    <li><a href="#">Link 3</a></li>
+                    <li><a href="#">Link 4</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Seção 3</h3>
+                <p>Contato ou redes sociais.</p>
+                 <ul>
+                    <li><a href="#">Link 5</a></li>
+                    <li><a href="#">Link 6</a></li>
+                </ul>
+            </div>
+        </footer>
+
+    </div> <!-- End content-overlay -->
+
+    <script src="script.js" type="module"></script>
+</body>
+</html>
