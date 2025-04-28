@@ -34,13 +34,95 @@ h1, h2, h3 {
     margin-bottom: 0.5em;
 }
 
-a {
-    color: var(--primary-color);
-    text-decoration: none;
+/* ................................... LINKS ....... */
+a:link{
+font-family: 'Trebuchet MS', Helvetica, sans-serif;
+text-decoration-line: underline;
+text-decoration-style: wavy;
+text-decoration-color: #0080FF;
+color: #FF0080;
+font-size: 100%;
 }
-
-a:hover {
-    text-decoration: underline;
+a:link:before{
+font-family: 'Trebuchet MS', Helvetica, sans-serif;
+content: "🦉";
+text-decoration-line: underline;
+text-decoration-style: wavy;
+text-decoration-color: #0080FF;
+color: #FF0080;
+font-size: 100%;
+}
+a:link:after{
+font-family: 'Trebuchet MS', Helvetica, sans-serif;
+content: "🦅";
+text-decoration-line: underline;
+text-decoration-style: wavy;
+text-decoration-color: #0080FF;
+color: #FF0080;
+font-size: 100%;
+}
+a:visited{
+font-family: 'Trebuchet MS', Helvetica, sans-serif;
+text-decoration-line: underline;
+text-decoration-style: wavy;
+text-decoration-color: #0080FF;
+color: #FF0080;
+font-size: 100%;
+}
+a:visited:before{
+font-family: 'Trebuchet MS', Helvetica, sans-serif;
+content: "🦅";
+text-decoration-line: underline;
+text-decoration-style: wavy;
+text-decoration-color: #0080FF;
+color: #FF0080;
+font-size: 100%;
+}
+a:visited:after{
+font-family: 'Trebuchet MS', Helvetica, sans-serif;
+content: "✔!!!";
+text-decoration-line: underline;
+text-decoration-style: wavy;
+text-decoration-color: #0080FF;
+color: #FF0080;
+font-size: 100%;
+}
+a:active{
+font-family: 'Trebuchet MS', Helvetica, sans-serif;
+text-decoration-line: underline;
+text-decoration-style: wavy;
+text-decoration-color: #0080FF;
+color: #FF0080;
+font-size: 100%;
+}
+a:active:before{
+font-family: 'Trebuchet MS', Helvetica, sans-serif;
+content: "🦉";
+text-decoration-line: underline;
+text-decoration-style: wavy;
+text-decoration-color: #0080FF;
+color: #FF0080;
+font-size: 100%;
+}
+a:active:after{
+font-family: 'Trebuchet MS', Helvetica, sans-serif;
+content: "🦉";
+text-decoration-line: underline;
+text-decoration-style: wavy;
+text-decoration-color: #0080FF;
+color: #FF0080;
+font-size: 100%;
+}
+a:hover{
+font-family: 'Trebuchet MS', Helvetica, sans-serif;
+font-size: 100%;
+text-decoration-line: underline;
+text-decoration-style: wavy;
+text-decoration-color: #0080FF;
+color: #FF0080;
+font-weight: bold;
+letter-spacing: 2px;
+word-spacing: -4.8pt;
 }
 
 ul {
